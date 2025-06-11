@@ -43,6 +43,27 @@ const getMyBookings = async (req, res) => {
   }
 };
 
+// @desc find user bookings by id
+// @route Get /api/bookings/:id
+const getBookingsById = async (req, res) => {
+  try {
+    const booking = await Booking.findById(req.params.id);
+    if (!booking) {
+      return res.status(404).json({ message: "Booking Not Found" });
+    }
+    if (booking.user.toString() !== req.user.id) {
+      return res.status(403).json({ message: "Not Authorized" });
+    }
+    res.status(200).json(booking);
+  } catch (error) {
+    console.error("Error getting booking by ID", error);
+    if (error.name === "CastError") {
+      return res.status(400).json({ message: "Invalid booking ID format" });
+    }
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 // @desc cancel bookings
 // @route delete /api/bookings/:id
 const cancelBookings = async (req, res) => {
