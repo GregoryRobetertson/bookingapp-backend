@@ -18,8 +18,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000", // local frontend dev
-      // You can add your Netlify URL here once deployed, e.g.:
-      // "https://your-frontend.netlify.app"
+
+      "https://your-frontend.netlify.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
