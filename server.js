@@ -16,11 +16,7 @@ app.use(express.json());
 // CORS configuration
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000", // local frontend dev
-
-      "https://your-frontend.netlify.app",
-    ],
+    origin: ["https://bookiteasy.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
