@@ -26,6 +26,10 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/bookings", bookingRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend API is running");
+});
+
 // Mongoose connection
 mongoose
   .connect(process.env.MONGODB_URI)
