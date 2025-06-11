@@ -3,7 +3,6 @@ const router = express.Router();
 const {
   createBooking,
   getMyBookings,
-  getBookingsById,
   cancelBookings,
 } = require("../controllers/bookingController");
 const auth = require("../middleware/authMiddleware");
