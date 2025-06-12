@@ -6,4 +6,7 @@ const {
 } = require("../controllers/serviceController");
 router.Post("/", createService);
 router.Get("/", getServices);
+router.post("/upload", upload.single("image"), (req, res) => {
+  res.json({ imageUrl: req.file.path });
+});
 module.exports = router;
