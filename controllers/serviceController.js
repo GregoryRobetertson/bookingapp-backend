@@ -9,7 +9,7 @@ const createService = async (req, res) => {
   }
 };
 
-const getService = async (req, res) => {
+const getServices = async (req, res) => {
     try {
         const services = await Service.find();
         res.status(200).json(services)
@@ -17,5 +17,5 @@ const getService = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 }
-module.exports = {createService, getService};
+module.exports = {createService, getServices};
 
