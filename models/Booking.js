@@ -1,5 +1,3 @@
-// This file handles what users are booking.
-
 const mongoose = require("mongoose");
 
 const bookingSchema = new mongoose.Schema({
