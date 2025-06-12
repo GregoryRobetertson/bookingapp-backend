@@ -96,5 +96,6 @@ const cancelBookings = async (req, res) => {
 module.exports = {
   createBooking,
   getMyBookings,
+  getBookingsById,
   cancelBookings,
 };
