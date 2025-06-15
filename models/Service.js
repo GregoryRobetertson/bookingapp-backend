@@ -6,7 +6,7 @@ const serviceSchema = new mongoose.Schema({
   description: { type: String, required: true },
   price: { type: Number, required: true },
   image: { type: String },
-  workimage: [{ type: String }],
+  workImage: [{ type: String }],
 });
 
 const Service = mongoose.model("service", serviceSchema);
