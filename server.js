@@ -34,11 +34,14 @@ app.get("/", (req, res) => {
 const startServer = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log("Connected to monodb");
+    console.log("Connected to MongoDB");
+
     app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     });
   } catch (err) {
     console.error("MongoDB connection error:", err.message);
+    process.exit(1);
   }
 };
+startServer();
